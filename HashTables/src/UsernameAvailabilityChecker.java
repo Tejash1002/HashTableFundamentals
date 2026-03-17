@@ -32,7 +32,7 @@ public class UsernameAvailabilityChecker {
         return !users.containsKey(username);
     }
 
-    // Suggest alternatives
+
     public List<String> suggestAlternatives(String username) {
         List<String> suggestions = new ArrayList<>();
 

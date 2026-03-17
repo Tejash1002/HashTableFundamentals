@@ -70,7 +70,7 @@ public class AutocompleteSystem {
         }
     }
 
-    // Main test
+
     public static void main(String[] args) {
         AutocompleteSystem auto = new AutocompleteSystem();
 

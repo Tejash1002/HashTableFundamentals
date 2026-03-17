@@ -4,10 +4,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class UsernameAvailabilityChecker {
 
-    // username -> userId
     private ConcurrentHashMap<String, Integer> users;
 
-    // username -> attempt count
+
     private ConcurrentHashMap<String, Integer> attempts;
 
     private AtomicInteger userIdGenerator;
@@ -18,7 +17,7 @@ public class UsernameAvailabilityChecker {
         userIdGenerator = new AtomicInteger(1);
     }
 
-    // Register a username
+
     public boolean register(String username) {
         if (users.containsKey(username)) {
             return false;
@@ -27,7 +26,7 @@ public class UsernameAvailabilityChecker {
         return true;
     }
 
-    // Check availability in O(1)
+
     public boolean checkAvailability(String username) {
         attempts.merge(username, 1, Integer::sum);
         return !users.containsKey(username);
